@@ -1,41 +1,41 @@
-#!/usr/bin/pyhton3
+#!/usr/bin/python3
+import models
 import uuid
 from datetime import datetime
-
-import models
+"""BaseModel Class with attr & methods"""
 
 
 class BaseModel:
-    """Create a Class BaseModel"""
+    """Creating base model"""
     def __init__(self, *args, **kwargs):
-        """Init attribute"""
+        """Init the model"""
         if kwargs:
-            for key, value in kwargs.items():
-                if key == "created_at" or key == "updated_at":
-                    now = datetime.now()
-                    custom_time = now.strftime("%Y-%m-%dT%H:%M:%S.%f")
-                if key != "__class__":
-                    self.__dict__[key] = value
+            for keys, value in kwargs.items():
+                if keys == "created_at" or keys == "updated_at":
+                    value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+                if keys != "__class__":
+                    self.__dict__[keys] = value
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
             models.storage.new(self)
-    
-    def __str__(self):
-        """Representation to a string"""
-        return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
 
     def save(self):
-        """Update datetime"""
+        """Save class & update date"""
         self.updated_at = datetime.now()
         models.storage.save()
 
-    def to_dict(self):
-        """Add a dict"""
-        obj_dict = self.__dict__.copy()
-        obj_dict.update({"__class__": self.__class__.__name__,
-                         "created_at": self.created_at.isoformat(),
-                         "updated_at": self.updated_at.isoformat()})
+    def __str__(self):
+        """Print the class"""
+        txt = "[{}] ({}) {}"
+        return txt.format(self.__class__.__name__, self.id, self.__dict__)
 
-        return obj_dict
+    def to_dict(self):
+        """Convert class to dict"""
+        instance_dict = self.__dict__.copy()
+        instance_dict.update({"__class__": self.__class__.__name__})
+        instance_dict.update({"created_at": self.created_at.isoformat()})
+        instance_dict.update({"updated_at": self.updated_at.isoformat()})
+
+        return instance_dict
