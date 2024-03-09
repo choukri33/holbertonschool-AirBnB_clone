@@ -45,6 +45,10 @@ Once your console is open and "(hbnb)" appears, it means there were no issues, a
 - amenity.py
 # How to use it
 
+# AUTHORS
+Choukri Abou-khadija <a href="https://github.com/choukri33?tab=repositories">Github</a>
+valentin Musseau   <a href="">Github</a>
+
 
 
 
