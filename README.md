@@ -21,23 +21,23 @@ Once your console is open and "(hbnb)" appears, it means there were no issues, a
 
 # How to use it
 
-Help: This command displays help or a list of available commands, along with instructions on how to use them.
+<b>Help:</b> This command displays help or a list of available commands, along with instructions on how to use them.
 
-Quit: This command allows you to exit the console or terminate its execution.
+<b>Quit:</b> This command allows you to exit the console or terminate its execution.
 
-Create: This command allows you to create a new object or instance according to the specified base model.
+<b>Create:</b> This command allows you to create a new object or instance according to the specified base model.
 
-Show: This command displays the details of a specific object or instance.
+<b>Show:</b> This command displays the details of a specific object or instance.
 
-All: This command displays all existing objects or instances according to the specified base model.
+<b>All:</b> This command displays all existing objects or instances according to the specified base model.
 
-EOF: This command signals the end of the file (End of File). It is often used to indicate that the user has finished entering data or commands in the console.
+<b>EOF:</b> This command signals the end of the file (End of File). It is often used to indicate that the user has finished entering data or commands in the console.
 
-Update: This command allows you to update the attributes of a specific object or instance with new values.
+<b>Update:</b> This command allows you to update the attributes of a specific object or instance with new values.
 
-Destroy: This command allows you to delete a specific object or instance.
+<b>Destroy</b> This command allows you to delete a specific object or instance.
 
-Update: This command allows you to update the attributes of a specific object or instance with new values.
+<b>Update:</b> This command allows you to update the attributes of a specific object or instance with new values.
 
 # Use function for this project
 - test save reload_model.py
